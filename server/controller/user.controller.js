@@ -92,15 +92,15 @@ const formSubmit = asyncHandler(async (req, res) => {
             url: mycloud.secure_url,
         },
     });
-    // user.propertydata.push({
-    //     propertyDetails: propertyData._id
-    // })
-    // await user.save()
-    // res.status(201).json({
-    //     propertyData,
-    //     success: true,
-    //     message: "Property added",
-    // });
+    user.propertydata.push({
+        propertyDetails: propertyData._id
+    })
+    await user.save()
+    res.status(201).json({
+        propertyData,
+        success: true,
+        message: "Property added",
+    });
 })
 const getPropertyDetails = asyncHandler(async (req, res) => {
     //  console.log(req.params.id)
